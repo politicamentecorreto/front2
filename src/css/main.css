@@ -1,0 +1,289 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background: #F6F6F2;
+    margin:0 auto;
+}
+
+a{
+    color: black;
+}
+
+a:hover{
+    color: black;
+}
+
+h1 {
+    padding: 25px 0;
+}
+
+p {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.barra{
+
+    width: 100%;
+    background: #43549a;
+    height: 80px;
+}
+
+.barra img{
+
+   height:80px;   
+   margin-left: 40%;
+   margin-right: 33%;
+}
+
+.icones-topo{
+    margin-top: -5%;
+    margin-left: 90%;
+}
+
+
+.icones-topo i{
+
+   margin-right: 10%;
+}
+
+.wrapper {
+
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 1366px; /* só para deixar a página grande*/
+}
+
+.canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-transform: translate3d(0);
+            transform: translate3d(0);
+    -webkit-transition: .3s ease all;
+            transition: .3s ease all;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+
+
+
+.botao-abrir{
+    margin-top: 1%;
+    margin-left: 5%;
+    position: absolute;
+}
+
+.botao{
+    margin-top: -25%;
+    margin-left: 55%;
+    position: fixed;
+    z-index: 99;
+}
+
+.botao{
+    color: #ffffff;
+}
+
+.botao i:hover{
+    
+   
+    color: #ffffff;
+    
+}
+
+.botao a{
+    width: 20%;    
+    position: fixed;
+}
+
+.conteudo{
+    margin-top: 8%;
+    margin-left: 8%;
+    position: absolute;
+
+}
+
+.menu {
+    height: 100%;
+    position: absolute;
+    -webkit-transform: translate3d(-300px,0,0);
+            transform: translate3d(-300px,0,0);
+    width: 300px;
+    background: #394780;
+    padding: 5rem;
+    z-index: 1;
+    margin-top: 10%;
+}
+
+.menu ul {
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    margin-left: -17%;
+    
+}
+
+.menu li {
+    list-style: none;
+    height: 80px;
+    width: 100%;    
+}
+
+.menu li:hover {
+    list-style: none;
+    height: 80px;
+    width: 100%;    
+    border: 1px;
+    border-style: double;
+    background-color: #43549a;
+    color: #394780; 
+    font-color:#394780;
+}
+
+
+.menu a {
+    font-size: 1.5em;
+    font-style: bold;
+    font-family: "Ebrima", sans-serif;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 7%;
+    margin-left: 5%;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+   
+   
+}
+
+.menu li a:hover {
+    
+    color:#eeeeee; 
+}
+
+.usuario{
+    border-style: double;
+    border-width: thin;
+    border-color: #43549a;
+    background-color: #303d74;
+    width: 310px;
+    height: 80px;
+    margin-left:-20%;
+    margin-top: -26%;
+    position: fixed;
+    z-index: 1;
+}
+
+.avatar {
+
+    border-radius: 50%;
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    margin-top: -0%;
+    margin-left: 5%;
+    border: 1px solid #000000;
+    background-color: #FFFF00;
+    position: fixed;
+    z-index: 2;
+}
+
+.nome{
+    font-family: "Ebrima", sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    position: fixed;
+    margin-top: 5%;
+    margin-left: 30%;
+}
+
+.logoff a{
+    
+    font-size: 13px;
+    color: #ffffff;
+    position: fixed;
+    margin-top: 15%;
+    margin-left: 35%;
+}
+
+.logoff a:hover{
+    
+    font-size: 13px;
+    color: #ffffff;
+    
+}
+
+.logoff i{
+    
+    font-size: 12px;
+    color: #ffffff;
+    position: fixed;
+    margin-top: 15.5%;
+    margin-left: 30%;
+}
+
+
+
+
+.wrapper.show-menu .canvas {
+    -webkit-transform: translate3d(300px,0,0);
+            transform: translate3d(300px,0,0);
+}
+
+.wrapper.show-menu .canvas .botao-abrir {
+    position:absolute;
+    left:-999px;
+}
+
+
+.footer{
+    width:100%;
+    height:160px;
+    background: #ffffff;
+}
+
+.endeavor{
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+.back4app{
+    margin-left: 10%;
+    margin-top: 1%;
+}
+
+.senai{
+    margin-left: 10%;
+    margin-top: 1%;
+    position: relative;
+}
+
+.jpmorgan{
+    margin-left: 10%;
+    margin-top: 1%;
+}
+
+.rodape {
+    width:100%;
+    height:80px;
+    background: #43549a;
+}
+
+.copyright{
+    position:relative;
+    margin-left:40%;
+    padding-top:2.5%;
+    color:#ffffff;
+}
+
+.fa {
+    color: #ffffff;
+}
+
