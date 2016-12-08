@@ -4,7 +4,7 @@ import './App.css';
 import './css/bootstrap/css/bootstrap.min.css';
 import './css/font-awesome/css/font-awesome.min.css';
 import './css/main.css';
-import Card from './components/Card.jsx';
+/*import Card from './components/Card.jsx';*/
 import Menu from './components/Menu.jsx';
 import Botao from './components/BotaoAbrir';
 import Barra from './components/Barra.jsx';

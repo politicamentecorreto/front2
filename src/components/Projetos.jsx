@@ -4,7 +4,7 @@ import '../css/bootstrap/css/bootstrap.min.css';
 import '../css/font-awesome/css/font-awesome.min.css';
 import '../css/main.css';
 import Parse from 'parse';
-import SelectPoliticos from './SelectPoliticos'
+import SelectPoliticos from './Selects/SelectPoliticos'
 
 
 class Projetos extends Component {
@@ -22,12 +22,12 @@ class Projetos extends Component {
 		projeto.set("descricao", document.getElementById("descricao").value);
 		projeto.set("ementa", document.getElementById("ementa").value);
 		projeto.set("link", document.getElementById("link").value);
-		projeto.set("tipo", document.getElementById("tipo").value);
+		projeto.set("tipo", document.getElementById("tipoProjeto").value);
 		projeto.set("situacao", document.getElementById("situacao").value);
 		projeto.set("politico", politico);
 		projeto.set("data", document.getElementById("data").value);
-		projeto.save(null, { success: function () { console.log('sucesso'); } });
-		document.getElementById('cadastrarProjeto').reset();
+		projeto.save(null, { success: function () { alert('Projeto Cadastrado com sucesso'); document.getElementById('cadastrarProjeto').reset(); } });
+
 	}
 
 	render() {
@@ -49,10 +49,11 @@ class Projetos extends Component {
 					<br></br>
 					<label for="">Situacao</label>
 					<select name='situacao' className="form-control" id='situacao'>
-						<option value='em_andamento'>Em andamento</option>
-						<option value='deferido'>Deferido</option>
-						<option value='aprovado'>Aprovado</option>
-						<option value='em_tramitacao'>Em tramitação</option>
+						<option value='Em andamento'>Em andamento</option>
+						<option value='Deferido'>Deferido</option>
+						<option value='Aprovado'>Aprovado</option>
+						<option value='Reprovado'>Reprovado</option>
+						<option value='Em tramitação'>Em tramitação</option>
 					</select>
 					<br></br>
 					<label for="">Politico</label>

@@ -7,6 +7,9 @@ import Projetos from './components/Projetos.jsx';
 import Processos from './components/Processos.jsx';
 import ViewPoliticos from './components/ViewPoliticos.jsx';
 import Visao from './components/Visao.jsx';
+import Historico from './components/Historico.jsx';
+import ProcessosView from './components/ProcessosView.jsx';
+import ProjetosView from './components/ProjetosView.jsx';
 import './index.css';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import MenuDetalhesPolitico from './components/MenuDetalhesPolitico.jsx'
@@ -23,10 +26,10 @@ ReactDOM.render(
 			<Route path="/projetos" component={Projetos} />
 			<Route path="/processos" component={Processos} />
 			<Route path="detalhesPolitico/:id" component={MenuDetalhesPolitico} >
-				<IndexRoute component={ViewPoliticos} />
-				<Route path="historico" component={Politicos} />
-				<Route path="processos" component={Partidos} />
-				<Route path="projetos" component={Processos} />
+				<IndexRoute component={Visao} />
+				<Route path="historico" component={Historico} />
+				<Route path="processos" component={ProcessosView} />
+				<Route path="projetos" component={ProjetosView} />
 			</Route>
 		</Route>
 	</Router>),

@@ -23,7 +23,7 @@ class ViewPoliticos extends Component {
                 var pol = {};
                 pol.id = object.id;
                 pol.nome = object.get('nome');
-                pol.sexo = ((object.get('sexo') == 'F') ? 'Feminino' : 'Masculino');
+                pol.sexo = ((object.get('sexo') === 'F') ? 'Feminino' : 'Masculino');
                 pol.telefone = object.get('telefone');
                 pol.gabinete = object.get('gabinete');
                 pol.partido = object.get('partido').get('sigla');

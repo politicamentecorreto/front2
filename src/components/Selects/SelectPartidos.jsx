@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../App.css';
-import '../css/bootstrap/css/bootstrap.min.css';
-import '../css/font-awesome/css/font-awesome.min.css';
-import '../css/main.css';
+import '../../App.css';
+import '../../css/bootstrap/css/bootstrap.min.css';
+import '../../css/font-awesome/css/font-awesome.min.css';
+import '../../css/main.css';
 import Parse from 'parse';
 import OptionPartido from './OptionPartido';
 
@@ -44,13 +44,14 @@ class SelectPartidos extends Component {
 
     renderOptions() {
         return this.state.partidos.map(partido => {
-            return <OptionPartido key={partido.id} objectId={partido.id} sigla={partido.sigla}/> 
+            return <OptionPartido key={partido.id} objectId={partido.id} sigla={partido.sigla} />
         })
     }
 
     render() {
         return (
             <select name="partidos" id="partido" className="form-control">
+                <option value="">Selecione o partido</option>
                 {this.renderOptions()}
             </select>
         );

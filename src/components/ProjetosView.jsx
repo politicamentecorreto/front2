@@ -9,14 +9,19 @@ import '../css/main.css';
 // função auxiliar que abre e fecha o menu
 
 
+class ProjetosView extends Component {
 
-class OptionPartidos extends Component {
+    componentDidMount() {
+        console.log(this.props.params.id);
+    }
 
     render() {
         return (
-           <option value={this.props.objectId}>{this.props.sigla}</option>     
+            <div>
+                Projetos
+            </div>
         );
     }
 }
 
-export default OptionPartidos;
+export default ProjetosView;

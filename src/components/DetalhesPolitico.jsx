@@ -70,13 +70,9 @@ class DetalhesPolitico extends Component {
     }
 
     render() {
-
-
-
         return (
             <div className="col-md-offset-1 col-md-offset-10 col-md-offset-1">
                 {this.renderPoliticos()}
-                
             </div>
         );
     }

@@ -12,17 +12,24 @@ import { Link } from 'react-router';
 class MenuDetalhesPolitico extends Component {
 
     render() {
+
+        const style = {
+            'background-color': 'white'
+        }
+
         return (
-            <div>
-                <ul className="nav nav-pills">
-                    <li className="active"><Link to='/detalhesPolitico/visao'>Visão Geral</Link></li>
-                    <li className="active"><Link to='/detalhesPolitico/historico'>Histórico</Link></li>
-                    <li className="active"><Link to='/detalhesPolitico/processos'>Processos</Link></li>
-                    <li className="active"><Link to='/detalhesPolitico/projetos'>Projetos</Link></li>
-                </ul>
-                {this.props.children}
+            <div className="col-md-offset-1 col-md-offset-10 col-md-offset-1" style={style}>
+                <br/>
+                    <ul className="nav nav-pills" >
+                        <li className=""><Link to={`/detalhesPolitico/${this.props.params.id}`}>Visão Geral</Link></li>
+                        <li className=""><Link to={`/detalhesPolitico/${this.props.params.id}/historico`}>Histórico</Link></li>
+                        <li className=""><Link to={`/detalhesPolitico/${this.props.params.id}/processos`}>Processos</Link></li>
+                        <li className=""><Link to={`/detalhesPolitico/${this.props.params.id}/projetos`}>Projetos</Link></li>
+                    </ul>
+                    <hr/>
+                    {this.props.children}
             </div>
-        );
+                );
     }
 }
 

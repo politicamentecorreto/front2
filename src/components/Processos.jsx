@@ -4,7 +4,7 @@ import '../css/bootstrap/css/bootstrap.min.css';
 import '../css/font-awesome/css/font-awesome.min.css';
 import '../css/main.css';
 import Parse from 'parse';
-import SelectPoliticos from './SelectPoliticos'	
+import SelectPoliticos from './Selects/SelectPoliticos'	
 
 class Processos extends Component {
 

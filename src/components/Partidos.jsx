@@ -16,20 +16,26 @@ class Partidos extends Component {
         var Partido = Parse.Object.extend("Partido");
         var partido = new Partido();
         var logo = document.getElementById("logo");
-		if (logo.files.length > 0) {
-			logo = logo.files[0];
-			var name = logo.name;
-			logo = new Parse.File(name, logo);
-		}
-
-
+        if (logo.files.length > 0) {
+            logo = logo.files[0];
+            var name = logo.name;
+            logo = new Parse.File(name, logo);
+        }
 
         partido.set("nome", document.getElementById("nome").value);
         partido.set("sigla", document.getElementById("sigla").value);
         partido.set("numero", document.getElementById("numero").value);
         partido.set("logo", logo);
-        partido.save(null, { success: function () { console.log('sucesso'); } });
-        document.getElementById('cadastrarPartido').reset();
+        partido.save(null, {
+            success: function () {
+                document.getElementById('cadastrarPartido').reset();
+                alert('Partido adicionado com sucesso');
+            },
+            error: function () {
+                alert('Não foi possivel adicionar partido');
+            }
+        });
+
     }
 
     render() {
@@ -37,7 +43,7 @@ class Partidos extends Component {
             <div className="container">
                 <center><h1 align="center">Cadastro de Partidos</h1></center>
                 <div className="col-md-offset-3 col-md-6 col-md-offset-3">
-                    <form className="form"  id="cadastrarPartido">
+                    <form className="form" id="cadastrarPartido">
                         <label for="P">Nome</label>
                         <input type="text" className="form-control" id='nome' />
                         <br></br>
@@ -51,9 +57,9 @@ class Partidos extends Component {
                                 <input type="text" className="form-control" id="sigla" />
                             </div><br />
                             <div className="col-md-12">
-								<label>Foto</label>
-								<input type="file" className="form-control" id="logo" name="logo"></input>
-							</div>
+                                <label>Foto</label>
+                                <input type="file" className="form-control" id="logo" name="logo"></input>
+                            </div>
                         </div>
                         <hr />
                     </form>

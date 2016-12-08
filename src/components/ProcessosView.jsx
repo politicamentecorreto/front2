@@ -9,14 +9,19 @@ import '../css/main.css';
 // função auxiliar que abre e fecha o menu
 
 
+class ProcessosView extends Component {
 
-class OptionPolitico extends Component {
+    componentDidMount() {
+        console.log(this.props.params.id);
+    }
 
     render() {
         return (
-           <option value={this.props.objectId}>{this.props.nome}</option>     
+            <div>
+                Processos
+            </div>
         );
     }
 }
 
-export default OptionPolitico;
+export default ProcessosView;

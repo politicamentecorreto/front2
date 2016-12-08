@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../App.css';
-import '../css/bootstrap/css/bootstrap.min.css';
-import '../css/font-awesome/css/font-awesome.min.css';
-import '../css/main.css';
+import '../../App.css';
+import '../../css/bootstrap/css/bootstrap.min.css';
+import '../../css/font-awesome/css/font-awesome.min.css';
+import '../../css/main.css';
 import Parse from 'parse';
 import OptionPolitico from './OptionPolitico';
 
@@ -49,6 +49,7 @@ class SelectPoliticos extends Component {
     render() {
         return (
             <select name="politico" id="politico" className="form-control">
+                <option value="">Selecione o politico</option>
                 {this.renderOptions()}
             </select>
         );
