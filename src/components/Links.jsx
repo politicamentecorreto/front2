@@ -20,6 +20,7 @@ class Links extends Component {
                     <li><Link to="/partidos">Partidos</Link></li>
                     <li><Link to="/projetos">Projetos</Link></li>
                     <li><Link to="/processos">Processos</Link></li>
+                    <li><Link to="/gastos">Gastos</Link></li>
                 </ul>
 		);
     }

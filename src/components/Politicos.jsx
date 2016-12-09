@@ -133,7 +133,7 @@ class Politicos extends Component {
                                 <select name="escolaridade_politico" id="escolaridade" className="form-control">
                                     <option value="">Selecione Escolaridade</option>
                                     <option value="Analfabeto">Analfabeto</option>
-                                    <option value="Fundamental Imcompleto">Fundamental Incompleto</option>
+                                    <option value="Fundamental Incompleto">Fundamental Incompleto</option>
                                     <option value="Fundamental Completo">Fundamental Completo</option>
                                     <option value="Ensino Médio Incompleto">Ensino Medio Incompleto</option>
                                     <option value="Ensino Médio Completo">Ensino Medio Completo</option>

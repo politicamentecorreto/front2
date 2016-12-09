@@ -6,6 +6,8 @@ import '../css/main.css';
 import MenuDetalhesPolitico from './MenuDetalhesPolitico';
 import ViewPoliticos from './ViewPoliticos';
 import Parse from 'parse';
+import Cargo from './../images/b.png';
+import Urna from './../images/u.png';
 
 //import script from './js/script.js';
 
@@ -26,6 +28,9 @@ class Visao extends Component {
         var Partido = Parse.Object.extend('Partido');
         var query = new Parse.Query(Politico);
         query.include('partido');
+        query.include('cargo');
+        query.include('estado');
+        
         query.equalTo("objectId", this.props.params.id);
         query.find().then(function(results) {
             var poli = [];
@@ -37,9 +42,11 @@ class Visao extends Component {
             pol.telefone = object.get('telefone');
             pol.gabinete = object.get('gabinete');
             pol.partido = object.get('partido').get('sigla');
+            pol.cargo = object.get('cargo').get('descricao');
             pol.partidofoto = object.get('partido').get('logo').url();
             pol.site = object.get('site');
             pol.cidade = object.get('cidade');
+            pol.estado = object.get('estado').get("uf");
             pol.escolaridade = object.get('escolaridade');
             pol.projeto = object.get('projeto');
             pol.processo = object.get('processo');
@@ -54,6 +61,7 @@ class Visao extends Component {
             pol.email = object.get('email');
             pol.apelido = object.get('apelido');
             pol.ocupacao = object.get('ocupacao');
+            console.log(poli.estado);
             return pol;
         }).then(response => {
             this.setState({
@@ -66,21 +74,52 @@ class Visao extends Component {
 
     render() {
 
+        const card = {
+            'height': '90vh'
+        }
+
         const style = {
             'position': 'absolute',
-            'color': 'white',
-            'padding-left': '7%'
+            'color': 'black',
+            'padding-left': '7%',
+            'z-index': '10',
+            'font-size': '20px'
+        }
+
+        const imageStyle = {
+            'opacity': '0.5',
+            'z-index': '1'
         }
 
         return (
-            <div>
-                <div style={style}>
-                    <h1>{this.state.politicos.nome}</h1>
-                    <p>{this.state.politicos.ocupacao}</p>
-                    <p>{this.state.politicos.escolaridade}</p>
+            <div style={card}>
+            <br/>
+                <div className="md-col-12">
+                    <div style={style}>
+                        <h1>{this.state.politicos.nome}</h1>
+                        {this.state.politicos.dataNascimento}<br />
+                        {this.state.politicos.cidade}, {this.state.politicos.estado}<br/>
+                        {this.state.politicos.ocupacao}<br />
+                        {this.state.politicos.escolaridade}
+                    </div>
+                    <div className="text-center">
+                        <img src={this.state.politicos.fotoCapa} style={imageStyle} width="900" />
+                    </div>
                 </div>
+                <br />
                 <div className="text-center">
-                    <img src={this.state.politicos.fotoCapa} alt={this.state.politicos.nome} width="900" />
+                    <div className="col-md-4">
+                        <img src={this.state.politicos.partidofoto} alt="Partido" width="50" /><br />
+                        <h3>{this.state.politicos.partido}</h3>
+                    </div>
+                    <div className="col-md-4">
+                        <img src={Cargo} alt="Partido" width="50" /><br />
+                        <h3>{this.state.politicos.cargo}</h3>
+                    </div>
+                    <div className="col-md-4">
+                        <img src={Urna} alt="Partido" width="50" /><br />
+                        <h3>{this.state.politicos.numero}</h3>
+                    </div>
                 </div>
                 <br />
             </div>
